@@ -267,7 +267,8 @@ const ProductsPage = () => {
             keyword: "",
             category,
             minPrice: priceRange[0],
-            maxPrice: priceRange[1]
+            maxPrice: priceRange[1],
+            sort: sortBy
         });
         setPage(1);
     };
@@ -281,7 +282,8 @@ const ProductsPage = () => {
             keyword: "",
             category: "",
             minPrice: "",
-            maxPrice: ""
+            maxPrice: "",
+            sort: ""
         });
         setPage(1);
     };

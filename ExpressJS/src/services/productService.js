@@ -26,8 +26,7 @@ const createProductService = async (data) => {
     }
 };
 
-
-// Lấy danh sách sản phẩm (lazy loading + filter + fuzzy search + sort + pagination)
+// Lấy danh sách sản phẩm (filter + fuzzy search + sort + pagination)
 const getProductsService = async (query) => {
     try {
         const page = parseInt(query.page) || 1;
@@ -71,13 +70,24 @@ const getProductsService = async (query) => {
 
         // -------- SORT --------
         if (query.sort) {
-            const order = query.order === "asc" ? 1 : -1;
-
-            products.sort((a, b) => {
-                if (a[query.sort] < b[query.sort]) return -1 * order;
-                if (a[query.sort] > b[query.sort]) return 1 * order;
-                return 0;
-            });
+            switch(query.sort) {
+                case 'price_asc':
+                    products.sort((a, b) => (a.price || 0) - (b.price || 0));
+                    break;
+                case 'price_desc':
+                    products.sort((a, b) => (b.price || 0) - (a.price || 0));
+                    break;
+                case 'name':
+                    products.sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+                    break;
+                case 'newest':
+                default:
+                    products.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
+                    break;
+            }
+        } else {
+            // Default sort by newest
+            products.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0));
         }
 
 
