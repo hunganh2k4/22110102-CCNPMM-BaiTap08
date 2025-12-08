@@ -28,8 +28,16 @@ import {
     StarOutlined
 } from '@ant-design/icons';
 import { getProductsApi, toggleFavoriteApi, getUserFavoritesApi } from '../util/api';
+import { 
+    fetchCartService, 
+    addToCartService, 
+    updateCartItemService, 
+    removeFromCartService, 
+    toggleSelectItemsService, 
+    checkoutService,
+    formatPrice 
+} from '../util/cartService';
 import { CartList, Button as LibButton, Modal as LibModal } from 'anhphan-cart-library';
-import axios from '../util/axios.customize'; // added: use axios instance with auth header
 import { useNavigate } from 'react-router-dom';
 
 const { Option } = Select;
@@ -56,48 +64,8 @@ const ProductsPage = () => {
     // CART FROM SERVER
     const [cartItems, setCartItems] = useState([]);
     const fetchCart = useCallback(async () => {
-        try {
-            const query = `query { cart { id userId items { productId quantity selected } } }`;
-            const resp = await axios.post('/v1/graphql', { query });
-            const body = resp ?? {};
-            let cart = null;
-            if (body.data && body.data.cart) cart = body.data.cart;
-            else if (body.cart) cart = body.cart;
-            else if (body.data && body.data.data && body.data.data.cart) cart = body.data.data.cart;
-            if (!cart || !Array.isArray(cart.items)) {
-                setCartItems([]);
-                return;
-            }
-
-            // enrich items with product details
-            const enriched = await Promise.all(cart.items.map(async (it) => {
-                const pid = it.productId;
-                try {
-                    const pRes = await axios.get(`/v1/api/products/${pid}`);
-                    // pRes may be { EC:0, data: {...} } or already data
-                    const prod = pRes?.data?.data ?? pRes?.data ?? pRes?.data?.data ?? pRes?.data; // best-effort
-                    const real = (pRes?.data && pRes?.data.data) ? pRes.data.data : (pRes?.data?.name ? pRes.data : (pRes?.name ? pRes : null));
-                    // fallback parse
-                    const productObj = real || (pRes && pRes.data) || null;
-                    return {
-                        _id: pid,
-                        quantity: it.quantity,
-                        selected: !!it.selected,
-                        name: productObj?.name || "",
-                        price: productObj?.price ?? 0,
-                        image: productObj?.image || ""
-                    };
-                } catch (e) {
-                    // if product details fail, still include id/qty/selected
-                    return { _id: pid, quantity: it.quantity, selected: !!it.selected, name: "", price: 0, image: "" };
-                }
-            }));
-
-            setCartItems(enriched);
-        } catch (error) {
-            console.error("fetchCart error:", error);
-            setCartItems([]);
-        }
+        const enriched = await fetchCartService();
+        setCartItems(enriched);
     }, []);
 
     useEffect(() => {
@@ -173,17 +141,7 @@ const ProductsPage = () => {
         setCartItems(optimistic);
 
         try {
-            const mutation = `
-              mutation AddToCart($productId: ID!, $quantity: Int!) {
-                addToCart(productId: $productId, quantity: $quantity) {
-                  id userId items { productId quantity selected }
-                }
-              }
-            `;
-            const variables = { productId, quantity: 1 };
-            const resp = await axios.post('/v1/graphql', { query: mutation, variables });
-            const body = resp ?? {};
-            const cartResp = body?.data?.addToCart ?? body?.addToCart ?? (body?.data?.cart ?? null);
+            const cartResp = await addToCartService(productId);
             if (cartResp) {
                 alert("Đã thêm sản phẩm vào giỏ hàng");
                 await fetchCart(); // sync with server
@@ -202,33 +160,28 @@ const ProductsPage = () => {
         const item = cartItems.find(i => i._id === id);
         if (!item) return;
         const newQ = (item.quantity || 0) + 1;
-        const mut = `mutation Update($productId: ID!, $quantity: Int!) { updateCartItem(productId:$productId, quantity:$quantity) { id } }`;
-        await axios.post('/v1/graphql', { query: mut, variables: { productId: id, quantity: newQ } });
+        await updateCartItemService(id, newQ);
         await fetchCart();
     };
     const handleDecrease = async (id) => {
         const item = cartItems.find(i => i._id === id);
         if (!item) return;
         const newQ = Math.max(1, (item.quantity || 1) - 1);
-        const mut = `mutation Update($productId: ID!, $quantity: Int!) { updateCartItem(productId:$productId, quantity:$quantity) { id } }`;
-        await axios.post('/v1/graphql', { query: mut, variables: { productId: id, quantity: newQ } });
+        await updateCartItemService(id, newQ);
         await fetchCart();
     };
     const handleRemove = async (id) => {
-        const mut = `mutation Remove($productId: ID!) { removeFromCart(productId:$productId) { id } }`;
-        await axios.post('/v1/graphql', { query: mut, variables: { productId: id } });
+        await removeFromCartService(id);
         await fetchCart();
     };
     const handleToggleSelect = async (id, checked) => {
-        const mut = `mutation Toggle($productIds: [ID!]!, $selected: Boolean!) { toggleSelectItems(productIds:$productIds, selected:$selected) { id } }`;
-        await axios.post('/v1/graphql', { query: mut, variables: { productIds: [id], selected: checked } });
+        await toggleSelectItemsService([id], checked);
         await fetchCart();
     };
     const handleSelectAll = async (checked) => {
         const ids = cartItems.map(i => i._id);
         if (ids.length === 0) return;
-        const mut = `mutation Toggle($productIds: [ID!]!, $selected: Boolean!) { toggleSelectItems(productIds:$productIds, selected:$selected) { id } }`;
-        await axios.post('/v1/graphql', { query: mut, variables: { productIds: ids, selected: checked } });
+        await toggleSelectItemsService(ids, checked);
         await fetchCart();
     };
 
@@ -238,7 +191,7 @@ const ProductsPage = () => {
         const prev = [...cartItems];
         try {
             if (!selectedItems.length) {
-                alerr("Vui lòng chọn ít nhất 1 sản phẩm để thanh toán");
+                alert("Vui lòng chọn ít nhất 1 sản phẩm để thanh toán");
                 return;
             }
             const token = localStorage.getItem("access_token");
@@ -252,15 +205,9 @@ const ProductsPage = () => {
             const optimistic = cartItems.filter(i => !i.selected);
             setCartItems(optimistic);
 
-            const gql = `
-              mutation Checkout($items: [CheckoutItemInput!]) {
-                checkout(items: $items) { EC EM order { id total } }
-              }
-            `;
-            const variables = { items: selectedItems.map(i => ({ productId: i._id, name: i.name, price: i.price, quantity: i.quantity })) };
-            const resp = await axios.post('/v1/graphql', { query: gql, variables });
-            const body = resp ?? {};
-            const result = body?.data?.checkout ?? body?.checkout ?? body;
+            const items = selectedItems.map(i => ({ productId: i._id, name: i.name, price: i.price, quantity: i.quantity }));
+            const result = await checkoutService(items);
+            
             if (result && Number(result.EC) === 0) {
                 alert(result.EM || "Thanh toán thành công");
                 await fetchCart(); // ensure server sync
@@ -342,13 +289,6 @@ const ProductsPage = () => {
     const onPageChange = (p, size) => {
         setPage(p);
         setPageSize(size);
-    };
-
-    const formatPrice = (price) => {
-        return new Intl.NumberFormat('vi-VN', {
-            style: 'currency',
-            currency: 'VND'
-        }).format(price);
     };
 
     const getCategoryColor = (categoryValue) => {
