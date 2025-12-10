@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Button, Col, Divider, Form, Input, notification, Row } from 'antd';
+import { Button, Col, Divider, Form, Input, Row } from 'antd';
 import { loginApi } from '../util/api';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../components/context/auth.context';
@@ -16,10 +16,7 @@ const LoginPage = () => {
 
         if (res && res.EC === 0) {
             localStorage.setItem("access_token", res.access_token)
-            notification.success({
-                message: "LOGIN_USER",
-                description: "Success"
-            });
+            alert("Đăng nhập thành công!");
             setAuth({
                 isAuthenticated: true,
                 user: {
@@ -30,10 +27,7 @@ const LoginPage = () => {
             navigate("/");
 
         } else {
-            notification.error({
-                message: "LOGIN_USER",
-                description: res?.EM ?? "error"
-            })
+            alert(res?.EM ?? "Đăng nhập thất bại!");
         }
     };
 

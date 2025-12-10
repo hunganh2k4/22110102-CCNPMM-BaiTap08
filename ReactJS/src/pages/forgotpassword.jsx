@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Divider, Form, Input, notification, Row } from 'antd';
+import { Button, Col, Divider, Form, Input, Row } from 'antd';
 import { forgotPasswordApi } from '../util/api';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowLeftOutlined } from '@ant-design/icons';
@@ -13,16 +13,10 @@ const ForgotPasswordPage = () => {
         const res = await forgotPasswordApi(email, newPassword);
 
         if (res && res.EC === 0) {
-            notification.success({
-                message: "FORGOT PASSWORD",
-                description: res.EM || "Đặt lại mật khẩu thành công!"
-            });
+            alert(res.EM || "Đặt lại mật khẩu thành công!");
             navigate("/login");
         } else {
-            notification.error({
-                message: "FORGOT PASSWORD",
-                description: res?.EM || "Có lỗi xảy ra, vui lòng thử lại!"
-            });
+            alert(res?.EM || "Có lỗi xảy ra, vui lòng thử lại!");
         }
     };
 
