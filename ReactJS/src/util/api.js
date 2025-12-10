@@ -33,13 +33,11 @@ const searchProductsApi = (params) => {
     return axios.get(URL_API, { params });
 };
 
-// --- new API helpers ---
 const toggleFavoriteApi = (productId) => {
     return axios.post(`/v1/api/products/${productId}/favorite`);
 }
 
 const getUserFavoritesApi = (userId = null) => {
-    // If userId provided, pass as query param; otherwise backend extracts from token
     if (userId) {
         return axios.get(`/v1/api/products/favorites`, { params: { userId } });
     }
