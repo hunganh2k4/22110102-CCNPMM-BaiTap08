@@ -1,0 +1,25 @@
+[{
+  "_id": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "name": "Hùng Anh",
+  "email": "phanhunganh2004@gmail.com",
+  "password": "$2b$10$43sZUTd6JtYOmU1iNBeSxOOUiPZ5dsGiLZ.ZYtKfYXjewLwOjN4Oa",
+  "role": "Admin",
+  "__v": 21,
+  "favorites": [
+    {
+      "$oid": "691d33c62e4fd28f5681cb09"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "69158e8764ef61a8d8a1884a"
+  },
+  "name": "anh123",
+  "email": "phanhunganh789@gmail.com",
+  "password": "$2b$10$fVPyqMDisSqQ8vpSXqZ64eG4tHQQypeBwNKWdYaNcBeatS85PNXkG",
+  "role": "User",
+  "__v": 0
+}]

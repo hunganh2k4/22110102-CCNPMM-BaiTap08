@@ -368,8 +368,8 @@ const ProductsPage = () => {
                             allowClear
                             size="large"
                             value={keyword}
-                            onChange={(e) => setKeyword(e.target.value)}
-                            onPressEnter={handleSearch}
+                            onChange={(e) => handleSearch(setKeyword(e.target.value))}
+                            // onPressEnter={handleSearch}
                             style={{ borderRadius: 8 }}
                         />
                     </Col>

@@ -1,0 +1,493 @@
+[{
+  "_id": {
+    "$oid": "69314c2566a7369ab542ca89"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 4
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 2
+    }
+  ],
+  "total": 113940000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T08:53:57.452Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T08:53:57.452Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176be613fe6068e49eb4d"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:42.625Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:42.625Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c4613fe6068e49eb51"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:48.217Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:48.217Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c4613fe6068e49eb55"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:48.502Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:48.502Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c4613fe6068e49eb59"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:48.680Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:48.680Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c4613fe6068e49eb5d"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:48.854Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:48.854Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c5613fe6068e49eb61"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:49.038Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:49.038Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693176c5613fe6068e49eb65"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 2
+    },
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T11:55:49.215Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T11:55:49.215Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69317884613fe6068e49ebd2"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    },
+    {
+      "productId": {
+        "$oid": "691d33cb2e4fd28f5681cb0c"
+      },
+      "name": "Laptop Dell Inspiron 2014",
+      "price": 18990000,
+      "quantity": 1
+    },
+    {
+      "productId": {
+        "$oid": "691d33c62e4fd28f5681cb09"
+      },
+      "name": "Laptop Dell Inspiron 2025",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 56970000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T12:03:16.202Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T12:03:16.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69317f30a60a441c06cdc593"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 18990000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T12:31:44.210Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T12:31:44.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693183ddede10e52dc82253e"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d33d12e4fd28f5681cb0f"
+      },
+      "name": "Laptop Dell Inspiron 2011",
+      "price": 18990000,
+      "quantity": 1
+    },
+    {
+      "productId": {
+        "$oid": "6929ceccd62375c3ba4f4af2"
+      },
+      "name": "iPhone 15 Pro Max 256GB",
+      "price": 19390000,
+      "quantity": 1
+    }
+  ],
+  "total": 38380000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-04T12:51:41.801Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-04T12:51:41.801Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69363474c12522fd4873f7cf"
+  },
+  "userId": {
+    "$oid": "693633adbbbcf8b031b71037"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "6929d099d62375c3ba4f4b0a"
+      },
+      "name": "Xiaomi Redmi Note 14 Pro (5G) 128GB/8GB",
+      "price": 4790000,
+      "quantity": 1
+    }
+  ],
+  "total": 4790000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-08T02:14:12.411Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-08T02:14:12.411Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69363530c12522fd4873f831"
+  },
+  "userId": {
+    "$oid": "693633adbbbcf8b031b71037"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d31902e4fd28f5681cadc"
+      },
+      "name": "Laptop Dell Inspiron 2024",
+      "price": 18990000,
+      "quantity": 1
+    }
+  ],
+  "total": 18990000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-08T02:17:20.490Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-08T02:17:20.490Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693a5d87aa6c4a02dba86467"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "6929d099d62375c3ba4f4b0a"
+      },
+      "name": "Xiaomi Redmi Note 14 Pro (5G) 128GB/8GB",
+      "price": 4790000,
+      "quantity": 1
+    }
+  ],
+  "total": 4790000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-11T05:58:31.163Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-11T05:58:31.163Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "693a6689aa6c4a02dba86496"
+  },
+  "userId": {
+    "$oid": "69158c97d974d693c1bcdeb5"
+  },
+  "items": [
+    {
+      "productId": {
+        "$oid": "691d31902e4fd28f5681cadc"
+      },
+      "name": "Laptop Dell Inspiron 2024",
+      "price": 17990000,
+      "quantity": 1
+    }
+  ],
+  "total": 17990000,
+  "status": "PAID",
+  "createdAt": {
+    "$date": "2025-12-11T06:36:57.368Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-11T06:36:57.368Z"
+  },
+  "__v": 0
+}]

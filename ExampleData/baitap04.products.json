@@ -1,0 +1,162 @@
+[{
+  "_id": {
+    "$oid": "691d31902e4fd28f5681cadc"
+  },
+  "name": "Laptop Dell Inspiron 2024",
+  "price": 17990000,
+  "description": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "stock": 14,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T02:55:12.650Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-11T06:36:57.352Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33c62e4fd28f5681cb09"
+  },
+  "name": "Laptop Dell Inspiron 2025",
+  "price": 18990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:04:38.334Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:04:38.334Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33cb2e4fd28f5681cb0c"
+  },
+  "name": "Laptop Dell Inspiron 2014",
+  "price": 20990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:04:43.710Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:04:43.710Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33d12e4fd28f5681cb0f"
+  },
+  "name": "Laptop Dell Inspiron 2011",
+  "price": 18990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:04:49.053Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:04:49.053Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33d52e4fd28f5681cb12"
+  },
+  "name": "Laptop Dell Inspiron 2010",
+  "price": 18990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:04:53.732Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:04:53.732Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33d92e4fd28f5681cb15"
+  },
+  "name": "Laptop Dell Inspiron 2047",
+  "price": 18990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:04:57.727Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:04:57.727Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "691d33f82e4fd28f5681cb22"
+  },
+  "name": "Laptop Dell Inspiron 2015",
+  "price": 18990000,
+  "description": "Laptop Dell đời mới, màn hình 15.6 inch, phù hợp học tập và làm việc.",
+  "stock": 15,
+  "category": "Laptop",
+  "image": "https://surfaceviet.vn/wp-content/uploads/2024/05/Surface-Laptop-7-Black-13.8-inch.jpg",
+  "createdAt": {
+    "$date": "2025-11-19T03:05:28.602Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-19T03:05:28.602Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6929ceccd62375c3ba4f4af2"
+  },
+  "name": "iPhone 15 Pro Max 256GB",
+  "price": 19390000,
+  "description": "Điện thoại mới, thông minh, hiện đại",
+  "stock": 18,
+  "category": "Điện thoại",
+  "image": "https://didongmoi.vn/wp-content/uploads/2025/07/iphone-15-pro-max-chinh-hang-cu-3.jpg",
+  "createdAt": {
+    "$date": "2025-11-28T16:33:16.344Z"
+  },
+  "updatedAt": {
+    "$date": "2025-11-28T16:33:16.344Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6929d099d62375c3ba4f4b0a"
+  },
+  "name": "Xiaomi Redmi Note 14 Pro (5G) 128GB/8GB",
+  "price": 4790000,
+  "description": "Xiaomi Redmi Note 14 sở hữu thiết kế đột phá và độ bền đột phá",
+  "stock": 48,
+  "category": "Điện thoại",
+  "image": "https://didongmoi.vn/wp-content/uploads/2025/07/redmi_note_14_pro_5g_titan_black__1.jpg",
+  "createdAt": {
+    "$date": "2025-11-28T16:40:57.154Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-11T05:58:31.139Z"
+  },
+  "__v": 0
+}]
