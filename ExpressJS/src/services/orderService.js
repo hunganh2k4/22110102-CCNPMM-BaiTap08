@@ -44,6 +44,26 @@ const createOrder = async (userId, items = null) => {
       return { EC: 3, EM: "Không có sản phẩm để tạo đơn" };
     }
 
+    // 1) Check stock availability for each item
+    for (const oi of orderItems) {
+      if (!oi.productId) {
+        return { EC: 4, EM: "ProductId missing in order item" };
+      }
+      const prod = await Product.findById(oi.productId).lean();
+      if (!prod) {
+        return { EC: 5, EM: `Không tìm thấy sản phẩm (${oi.productId})` };
+      }
+      if ((prod.stock || 0) < (oi.quantity || 0)) {
+        return { EC: 6, EM: `Sản phẩm "${prod.name || prod._id}" không đủ số lượng` };
+      }
+    }
+
+    // 2) Decrement stock atomically for each item
+    for (const oi of orderItems) {
+      await Product.findByIdAndUpdate(oi.productId, { $inc: { stock: -Math.max(0, Number(oi.quantity || 0)) } });
+    }
+
+    // 3) Calculate total and create order
     const total = orderItems.reduce((s, it) => s + (Number(it.price || 0) * Number(it.quantity || 0)), 0);
 
     const order = await Order.create({
@@ -53,7 +73,7 @@ const createOrder = async (userId, items = null) => {
       status: "PAID" // demo: mark as PAID
     });
 
-    // Remove paid items from cart (if exists)
+    // 4) Remove paid items from cart (if exists)
     const cart = await Cart.findOne({ userId: uid });
     if (cart) {
       const paidProductIds = orderItems.map(oi => String(oi.productId));
